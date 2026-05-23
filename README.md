@@ -37,7 +37,7 @@ Md Abdullah 24-05-2026 02:10 • # 🎯 AI Resume Analyzer & PDF Editor
 - **[Pillow](https://python-pillow.org/)** — Image processing for PDF previews
 
 ### AI
-- **[Google Gemini 2.0 Flash](https://ai.google.dev/)** — Resume analysis and grammar checking
+- **[Google Gemini 3.5 Flash](https://ai.google.dev/)** — Resume analysis and grammar checking
 
 ### Frontend
 - **Vanilla JavaScript** — No framework dependencies
