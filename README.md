@@ -9,7 +9,7 @@ Md Abdullah 24-05-2026 02:10 • # 🎯 AI Resume Analyzer & PDF Editor
 
 ![Demo Preview](https://via.placeholder.com/800x400.png?text=AI+Resume+Analyzer+Demo)
 
----
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## ✨ Features
 
@@ -24,7 +24,7 @@ Md Abdullah 24-05-2026 02:10 • # 🎯 AI Resume Analyzer & PDF Editor
 | 🔄 **Re-analyze** | After editing, get a fresh ATS score with one click |
 | 📥 **Download** | Export your improved resume in original format |
 
----
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## 🛠️ Tech Stack
 
@@ -43,6 +43,4 @@ Md Abdullah 24-05-2026 02:10 • # 🎯 AI Resume Analyzer & PDF Editor
 - **Vanilla JavaScript** — No framework dependencies
 - **HTML5 + CSS3** — Modern, responsive UI
 
----
-
-## 📁 Project Structure
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
