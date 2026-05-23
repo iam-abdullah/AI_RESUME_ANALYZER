@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Resume Editor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">📄 AI Resume Analyzer</div>
+        <div class="nav-links">
+            <a href="/">← New Analysis</a>
+            <button id="reanalyzeBtn" class="btn-secondary">🔄 Re-analyze</button>
+            <button id="saveBtn" class="btn-primary">💾 Save & Download</button>
+        </div>
+    </nav>
+
+    <div class="editor-layout">
+        <aside class="sidebar analysis-sidebar" id="analysisSidebar">
+            <div class="ats-score-section">
+                <h3>ATS Score</h3>
+                <div class="score-bar-wrap">
+                    <div class="score-bar" id="scoreBar"></div>
+                </div>
+                <div class="score-text"><span id="scoreNum">0</span>/100</div>
+            </div>
+
+            <div class="score-breakdown" id="scoreBreakdown"></div>
+
+            <div class="analysis-section">
+                <h4>🔑 Missing Keywords</h4>
+                <div id="missingKeywords" class="keyword-tags"></div>
+            </div>
+
+            <div class="analysis-section">
+                <h4>✅ Matched Keywords</h4>
+                <div id="matchedKeywords" class="keyword-tags matched"></div>
+            </div>
+
+            <div class="analysis-section">
+                <h4>📋 Section Suggestions</h4>
+                <div id="sectionSuggestions"></div>
+            </div>
+
+            <div class="analysis-section">
+                <h4>✏️ Grammar Errors</h4>
+                <div id="grammarErrors"></div>
+            </div>
+
+            <div class="analysis-section recommendation">
+                <h4>💡 Overall Recommendation</h4>
+                <p id="overallRec"></p>
+            </div>
+        </aside>
+
+        <main class="canvas-area" id="canvasArea">
+            <div id="loading">⏳ Loading your resume...</div>
+        </main>
+    </div>
+
+    <script>
+        var FILE_ID = "{{ file_id }}";
+        var EXT = "{{ ext }}";
+        var HAS_ANALYSIS = "{{ has_analysis_js }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/editor.js') }}"></script>
+</body>
+</html>

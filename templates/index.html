@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">📄 AI Resume Analyzer</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Get your <span class="accent">ATS Score</span> Instantly</h1>
+        <p>Upload your resume, paste the job description, and get AI-powered improvement suggestions.</p>
+
+        <div class="upload-card analyzer-card">
+            <form id="analyzerForm" enctype="multipart/form-data">
+                <label for="fileInput" class="upload-area" id="dropZone">
+                    <div class="upload-icon">📄</div>
+                    <p><strong>Click to upload resume</strong> or drag and drop</p>
+                    <small>PDF or DOCX (max 16MB)</small>
+                    <input type="file" id="fileInput" name="file" accept=".pdf,.docx,.doc" hidden />
+                </label>
+                <div id="fileName" class="file-name"></div>
+
+                <div class="form-group">
+                    <label>Target Job Role *</label>
+                    <input type="text" name="role" id="role" placeholder="e.g., Senior Python Developer" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Job Description *</label>
+                    <textarea name="job_description" id="jobDesc" rows="8"
+                        placeholder="Paste full job description here..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary btn-large" id="analyzeBtn">
+                    🚀 Analyze My Resume
+                </button>
+            </form>
+        </div>
+
+        <div id="loadingOverlay" class="loading-overlay" style="display:none;">
+            <div class="loader-content">
+                <div class="spinner"></div>
+                <h3>Analyzing your resume...</h3>
+                <p id="loadingMsg">Processing...</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/analyzer.js') }}"></script>
+</body>
+</html>

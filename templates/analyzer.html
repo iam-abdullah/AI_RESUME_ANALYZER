@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Resume ATS Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">📄 DocEditor</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/analyzer" class="active">Resume Analyzer</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Resume <span class="accent">ATS Analyzer</span></h1>
+        <p>Upload your resume and get AI-powered ATS score with section-wise improvement suggestions.</p>
+
+        <div class="upload-card analyzer-card">
+            <form id="analyzerForm" enctype="multipart/form-data">
+                <label for="fileInput" class="upload-area" id="dropZone">
+                    <div class="upload-icon">📄</div>
+                    <p><strong>Click to upload resume</strong> or drag and drop</p>
+                    <small>PDF or DOCX (max 16MB)</small>
+                    <input type="file" id="fileInput" name="file" accept=".pdf,.docx,.doc" hidden />
+                </label>
+                <div id="fileName" class="file-name"></div>
+
+                <div class="form-group">
+                    <label>Target Job Role *</label>
+                    <input type="text" name="role" id="role" placeholder="e.g., Senior Python Developer" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Job Description *</label>
+                    <textarea name="job_description" id="jobDesc" rows="8"
+                        placeholder="Paste the full job description here..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary btn-large" id="analyzeBtn">
+                    🚀 Analyze My Resume
+                </button>
+            </form>
+            <div id="status"></div>
+        </div>
+
+        <!-- Loading overlay -->
+        <div id="loadingOverlay" class="loading-overlay" style="display:none;">
+            <div class="loader-content">
+                <div class="spinner"></div>
+                <h3>Analyzing your resume...</h3>
+                <p id="loadingMsg">Extracting text from document...</p>
+            </div>
+        </div>
+
+        <!-- Quick result preview -->
+        <div id="resultPreview" class="result-preview" style="display:none;">
+            <h2>✅ Analysis Complete!</h2>
+            <div class="score-circle">
+                <span id="scoreValue">0</span><small>/100</small>
+            </div>
+            <p id="scoreLabel">Your ATS Score</p>
+            <button id="goToEditorBtn" class="btn-primary btn-large">
+                ✏️ Open in Editor →
+            </button>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/analyzer.js') }}"></script>
+</body>
+</html>
